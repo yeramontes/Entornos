@@ -14,7 +14,13 @@ public class GeneradorIp {
 	public static String generarIp() {
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < 4; i++) {
-			sb.append(generarNumero());
+			int numero = generarNumero();
+			if(i == 0 || i == 3) {
+				while(numero == 0) {
+					numero = generarNumero();
+				}
+			}
+			sb.append(numero);
 			if(i < 3) sb.append(".");
 		}
 		
