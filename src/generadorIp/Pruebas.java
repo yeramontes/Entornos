@@ -17,10 +17,13 @@ class Pruebas {
 	@Test
 	void testGeneraIp() {
 		String ip = GeneradorIp.generarIp();
-		String[] numerosString = ip.split(".");
+		String[] numerosString = ip.split("\\.");
 		int[] numeros = new int[numerosString.length];
 		for(int i = 0; i < numerosString.length; i++) {
 			numeros[i] = Integer.parseInt(numerosString[i]);
 		}
+		int primerNumero = numeros[0];
+		int ultimoNumero = numeros[numeros.length - 1];
+		assertTrue(primerNumero != 0 && ultimoNumero != 0);
 	}
 }
