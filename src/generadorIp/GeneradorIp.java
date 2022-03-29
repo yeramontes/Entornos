@@ -15,6 +15,7 @@ public class GeneradorIp {
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < 4; i++) {
 			sb.append(generarNumero());
+			if(i < 3) sb.append(".");
 		}
 		
 		return sb.toString();
