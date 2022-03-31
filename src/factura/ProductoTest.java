@@ -10,7 +10,7 @@ class ProductoTest {
 	void testNuevo() {
 		Producto p = new Producto("pan", 0.50f, 1);
 		assertTrue(p.getNombre().equals("pan"));
-		assertEquals(0.50, p.getPrecio());
+		assertEquals(0.50f, p.getPrecio());
 		assertEquals(1, p.getCantidad());
 	}
 

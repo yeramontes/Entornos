@@ -14,17 +14,17 @@ public class Factura {
 	}
 	
 	public float totalFactura() {
-		float total = 0;
+		float total = 0f;
 		for(Producto p : productos) {
-			total += p.getPrecio();
+			total += (float)(p.getPrecio());
 		}
 		
-		return (float)total;
+		return (float)(total);
 	}
 	
 	public float aplicarIva(float iva) {
 		if(iva < 1 && iva > 0) {
-			return totalFactura() * iva;
+			return totalFactura() + (totalFactura() * iva);
 		}
 		
 		if(iva >= 1) {
